@@ -1,14 +1,16 @@
-name: Hello World Workflow
+name: Hello World Workflow # This is just the workflow name shown in GitHub Actions tab.
 
-on:
+on:   # trigger    # Run this workflow when someone pushes code to the main branch.
   push:
-    branches:
+    branches:   # git push → main branch → workflow starts
       - main
 
-jobs:
-  say-hello:
-    runs-on: ubuntu-latest
+jobs:  # A job is a group of steps that run together.
+  say-hello: # job name 
+    runs-on: ubuntu-latest  #This tells GitHub:
 
-    steps:
+                          #                                “Run this job on a Linux machine (Ubuntu).”
+
+    steps: #Steps are commands executed one by one
       - name: Print Hello World
         run: echo "Hello World from GitHub Actions"
