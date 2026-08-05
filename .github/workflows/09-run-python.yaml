@@ -13,6 +13,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: List files
+        run: |
+          pwd
+          ls -la
+          find .
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -20,3 +26,26 @@ jobs:
 
       - name: Run Python file
         run: python app.py
+
+# name: Run Python File
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   run-python:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
+
+#       - name: Setup Python
+#         uses: actions/setup-python@v5
+#         with:
+#           python-version: "3.10"
+
+#       - name: Run Python file
+#         run: python app.py
